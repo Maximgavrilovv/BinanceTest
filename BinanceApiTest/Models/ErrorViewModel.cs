@@ -1,0 +1,11 @@
+using System;
+
+namespace BinanceApiTest.Models
+{
+    public class ErrorViewModel
+    {
+        public string RequestId { get; set; }
+
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
+}

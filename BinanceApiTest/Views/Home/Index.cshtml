@@ -1,0 +1,39 @@
+﻿@using BinanceApiTest.Models;
+@model BinanceApiTest.Models.UserSettings;
+ 
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Create</h1>
+
+<h4>BinanceRecord</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Pair" class="control-label">Please separate pairs with commas</label>
+                <input asp-for="Pair" class="form-control" value="@ViewBag.Pairs"/>
+                <span asp-validation-for="Pair" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Seconds" class="control-label"></label>
+                <input asp-for="Seconds" class="form-control" value="@ViewBag.Seconds"/>
+                <span asp-validation-for="Seconds" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
