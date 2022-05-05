@@ -22,7 +22,8 @@ namespace BinanceUnitTests
             };
 
             await api.GetBinanceData(tradePriceList, tradeSymbolList, seconds, pairList);
-            Assert.IsTrue(tradeSymbolList.Count > 0 && tradePriceList.Count == tradeSymbolList.Count);
+            Assert.IsTrue(tradeSymbolList.Count > 0 && tradePriceList.Count > 0, "No data found!");
+            Assert.IsTrue(tradePriceList.Count == tradeSymbolList.Count);
         }
     }
 }
